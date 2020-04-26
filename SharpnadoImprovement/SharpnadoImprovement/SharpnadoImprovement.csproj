@@ -1,0 +1,47 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resoruces\Images\avatar_men_1.jpg" />
+    <None Remove="Resoruces\Images\avatar_men_10.jpg" />
+    <None Remove="Resoruces\Images\avatar_men_2.jpg" />
+    <None Remove="Resoruces\Images\avatar_men_3.jpg" />
+    <None Remove="Resoruces\Images\avatar_men_4.jpg" />
+    <None Remove="Resoruces\Images\avatar_men_5.jpg" />
+    <None Remove="Resoruces\Images\avatar_men_6.jpg" />
+    <None Remove="Resoruces\Images\avatar_men_7.jpg" />
+    <None Remove="Resoruces\Images\avatar_men_8.jpg" />
+    <None Remove="Resoruces\Images\avatar_men_9.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resoruces\Images\avatar_men_1.jpg" />
+    <EmbeddedResource Include="Resoruces\Images\avatar_men_10.jpg" />
+    <EmbeddedResource Include="Resoruces\Images\avatar_men_2.jpg" />
+    <EmbeddedResource Include="Resoruces\Images\avatar_men_3.jpg" />
+    <EmbeddedResource Include="Resoruces\Images\avatar_men_4.jpg" />
+    <EmbeddedResource Include="Resoruces\Images\avatar_men_5.jpg" />
+    <EmbeddedResource Include="Resoruces\Images\avatar_men_6.jpg" />
+    <EmbeddedResource Include="Resoruces\Images\avatar_men_7.jpg" />
+    <EmbeddedResource Include="Resoruces\Images\avatar_men_8.jpg" />
+    <EmbeddedResource Include="Resoruces\Images\avatar_men_9.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="4.6.0.616-pre4" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\temp\Sharpnado.Presentation.Forms\Sharpnado.Presentation.Forms\Sharpnado.Presentation.Forms.csproj" />
+  </ItemGroup>
+</Project>

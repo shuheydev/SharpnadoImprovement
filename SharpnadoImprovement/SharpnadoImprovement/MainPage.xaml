@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="SharpnadoImprovement.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:local="clr-namespace:SharpnadoImprovement"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:renderedViews="clr-namespace:Sharpnado.Presentation.Forms.RenderedViews;assembly=Sharpnado.Presentation.Forms"
+    mc:Ignorable="d">
+
+    <d:ContentPage.BindingContext>
+        <local:MainPage />
+    </d:ContentPage.BindingContext>
+    <Grid>
+        <!--<ListView ItemsSource="{Binding People}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Label Text="{Binding Name}" />
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>-->
+        <renderedViews:HorizontalListView
+            ColumnCount="1"
+            EnableDragAndDrop="True"
+            ItemHeight="50"
+            ItemsSource="{Binding People}"
+            ListLayout="Grid"
+            MovementDirection="VerticalOnly"
+            ScrollSpeed="Slowest">
+            <renderedViews:HorizontalListView.ItemTemplate>
+                <DataTemplate>
+                    <renderedViews:DraggableViewCell x:Name="DraggableViewCell" IsDraggable="True">
+                        <Grid>
+                            <Frame
+                                Margin="10,0"
+                                BorderColor="Green"
+                                HasShadow="True">
+
+                                <!--<Frame.Triggers>
+                                    <DataTrigger
+                                        Binding="{Binding Source={x:Reference DraggableViewCell}, Path=IsDragAndDropping}"
+                                        TargetType="Frame"
+                                        Value="True">
+                                        <Setter Property="BackgroundColor" Value="LightPink" />
+                                        <Setter Property="ScaleX" Value="1.05" />
+                                    </DataTrigger>
+                                </Frame.Triggers>-->
+
+                                <StackLayout Orientation="Horizontal">
+                                    <Image
+                                        Aspect="AspectFill"
+                                        Source="{Binding ImageSrc}"
+                                        WidthRequest="100" />
+                                    <Label
+                                        Margin="5"
+                                        FontSize="Large"
+                                        Text="{Binding Name}" />
+                                </StackLayout>
+                            </Frame>
+                        </Grid>
+                    </renderedViews:DraggableViewCell>
+                </DataTemplate>
+            </renderedViews:HorizontalListView.ItemTemplate>
+        </renderedViews:HorizontalListView>
+    </Grid>
+
+</ContentPage>
